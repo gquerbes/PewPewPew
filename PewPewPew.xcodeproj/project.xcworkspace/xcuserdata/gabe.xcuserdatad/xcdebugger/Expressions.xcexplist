@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "MainScene.sceneDidLoad() -&gt; ():MainScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.physicsWorld.contactDelegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "Ball.setPhysics() -&gt; ():Ball.swift">
          <PersistentStrings>
             <PersistentString
@@ -14,13 +22,16 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MainScene.sceneDidLoad() -&gt; ():MainScene.swift">
-      </ContextState>
-      <ContextState
          contextName = "MainScene.update(Double) -&gt; ():MainScene.swift">
          <PersistentStrings>
             <PersistentString
+               value = "paddle.position">
+            </PersistentString>
+            <PersistentString
                value = "self.children">
+            </PersistentString>
+            <PersistentString
+               value = "child.position">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -29,6 +40,20 @@
          <PersistentStrings>
             <PersistentString
                value = "self">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainScene.didBegin(SKPhysicsContact) -&gt; ():MainScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "contact.bodyA.node.name">
+            </PersistentString>
+            <PersistentString
+               value = "contact.bodyA">
+            </PersistentString>
+            <PersistentString
+               value = "contact.bodyA.node?.name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

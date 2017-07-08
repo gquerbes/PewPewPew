@@ -10,9 +10,9 @@ import Foundation
 import SpriteKit
 
 
-class MainScene : SKScene{
+class MainScene : SKScene, SKPhysicsContactDelegate{
     
-    private var paddle : SKSpriteNode?
+    private var paddle : Paddle?
     private var paddleXPosition : CGFloat?
     private var paddleYPosition : CGFloat? // does not change
     private var lastUpdate : TimeInterval = 0
@@ -21,23 +21,15 @@ class MainScene : SKScene{
     
     override func sceneDidLoad() {
         
-      
-        
         // create paddle
         if(paddle == nil){
             let w = (self.size.width + self.size.height) * 0.05
-            self.paddle = SKSpriteNode(color: SKColor.red, size: CGSize(width: w, height: w/4))
+            self.paddle = Paddle.init(size: CGSize(width: w, height: w/4))
             
             paddleXPosition = UIScreen.main.bounds.width * -0.05
             paddleYPosition = UIScreen.main.bounds.height * -0.5
             paddle?.position = CGPoint.init(x: paddleXPosition!, y: paddleYPosition!)
-            paddle?.color = SKColor.red
-            paddle?.physicsBody = SKPhysicsBody(rectangleOf: (paddle?.size)!)
-            paddle?.physicsBody?.affectedByGravity = false
-            paddle?.physicsBody?.mass = 1000
-            paddle?.physicsBody?.collisionBitMask = 0b0001
-            
-            
+          
             self.addChild(paddle!)
           
         }
@@ -50,11 +42,12 @@ class MainScene : SKScene{
             
             
         }
-        
+        self.physicsWorld.contactDelegate = self as SKPhysicsContactDelegate
         
         
         
     }
+    // MARK: Interaction
     
     func dropBall(){
         if let newball = self.ball?.copy() as! SKSpriteNode?{
@@ -93,15 +86,37 @@ class MainScene : SKScene{
             
             //clean up old children
             for child in self.children{
-                if(!child.intersects(self) && child.position.y < (paddle?.position.y)!){
+                if(!child.intersects(self) && child.position.y < (paddle?.position.y)! - 1){
                     child.removeFromParent()
                 }
             }
         }
-        
-        
-        
+
     }
- 
+
+    let shockWaveAction: SKAction = {
+        let growAndFadeAction = SKAction.group([SKAction.scale(to: 50, duration: 0.5),
+                                                SKAction.fadeOut(withDuration: 0.5)])
+        
+        let sequence = SKAction.sequence([growAndFadeAction,
+                                          SKAction.removeFromParent()])
+        
+        return sequence
+    }()
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        if contact.collisionImpulse > 5 &&
+            contact.bodyA.node?.name == "paddle" &&
+            contact.bodyB.node?.name == "ball" {
+            
+            let shockwave = SKShapeNode(circleOfRadius: 1)
+            
+            shockwave.position = contact.contactPoint
+            self.addChild(shockwave)
+            
+            contact.bodyB.node?.name == "ball" ? contact.bodyB.node?.removeFromParent() : contact.bodyA.node?.removeFromParent()    
+            shockwave.run(shockWaveAction)
+        }
+    }
     
 }

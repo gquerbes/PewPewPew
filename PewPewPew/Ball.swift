@@ -13,10 +13,15 @@ class Ball : SKSpriteNode{
     
     init(){
         //create node
-        super.init(texture: SKTexture.init(), color: SKColor.blue, size: CGSize(width: 100.0, height: 20.0))
+        super.init(texture: SKTexture.init(), color: SKColor.blue, size: CGSize(width: 20.0, height: 20.0))
 
+        //set properties
+        setProperties()
+        
         //set physics
         setPhysics()
+        
+        
     }
     
     
@@ -25,6 +30,11 @@ class Ball : SKSpriteNode{
         self.physicsBody?.affectedByGravity = true
         self.physicsBody?.categoryBitMask = 0b0001
         
+        
+    }
+    
+    func setProperties(){
+        self.name = "ball"
     }
     
     

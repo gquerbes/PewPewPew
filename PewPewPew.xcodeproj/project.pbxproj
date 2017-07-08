@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0000214F1F118D150033FF5D /* Paddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000214E1F118D150033FF5D /* Paddle.swift */; };
 		00BAB1771F113FAE005D80D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BAB1761F113FAE005D80D1 /* AppDelegate.swift */; };
 		00BAB1791F113FAE005D80D1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 00BAB1781F113FAE005D80D1 /* GameScene.sks */; };
 		00BAB17B1F113FAE005D80D1 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 00BAB17A1F113FAE005D80D1 /* Actions.sks */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0000214E1F118D150033FF5D /* Paddle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paddle.swift; sourceTree = "<group>"; };
 		00BAB1731F113FAE005D80D1 /* PewPewPew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PewPewPew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BAB1761F113FAE005D80D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00BAB1781F113FAE005D80D1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				00BAB1AA1F11466A005D80D1 /* MainScene.sks */,
 				00BAB1AC1F114687005D80D1 /* MainScene.swift */,
 				00BAB1AE1F116169005D80D1 /* Ball.swift */,
+				0000214E1F118D150033FF5D /* Paddle.swift */,
 			);
 			path = PewPewPew;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				00BAB17D1F113FAE005D80D1 /* GameScene.swift in Sources */,
 				00BAB1AD1F114687005D80D1 /* MainScene.swift in Sources */,
 				00BAB1AF1F116169005D80D1 /* Ball.swift in Sources */,
+				0000214F1F118D150033FF5D /* Paddle.swift in Sources */,
 				00BAB17F1F113FAE005D80D1 /* GameViewController.swift in Sources */,
 				00BAB1771F113FAE005D80D1 /* AppDelegate.swift in Sources */,
 			);
@@ -542,6 +546,7 @@
 				00BAB1A31F113FAE005D80D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00BAB1A41F113FAE005D80D1 /* Build configuration list for PBXNativeTarget "PewPewPewTests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +555,7 @@
 				00BAB1A61F113FAE005D80D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00BAB1A71F113FAE005D80D1 /* Build configuration list for PBXNativeTarget "PewPewPewUITests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +564,7 @@
 				00BAB1A91F113FAE005D80D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
