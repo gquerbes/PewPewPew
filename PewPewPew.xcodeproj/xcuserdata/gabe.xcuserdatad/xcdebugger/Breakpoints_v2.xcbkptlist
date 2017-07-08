@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PewPewPew/GameScene.swift"
+            timestampString = "521229141.344977"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "sceneDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PewPewPew/MainScene.swift"
+            timestampString = "521235705.12657"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "MainScene"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PewPewPew.MainScene.(ball in _7176ECA8EEEF028ADAA43655FCE32C8F).getter : Swift.Optional&lt;PewPewPew.Ball&gt;"
+                  moduleName = "PewPewPew"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Dropbox/DevFiles/XCODE/PewPewPew/PewPewPew/MainScene.swift"
+                  timestampString = "521235705.444479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PewPewPew.MainScene.(ball in _7176ECA8EEEF028ADAA43655FCE32C8F).setter : Swift.Optional&lt;PewPewPew.Ball&gt;"
+                  moduleName = "PewPewPew"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Dropbox/DevFiles/XCODE/PewPewPew/PewPewPew/MainScene.swift"
+                  timestampString = "521235705.446237"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PewPewPew.MainScene.init (size : __C.CGSize) -&gt; PewPewPew.MainScene"
+                  moduleName = "PewPewPew"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Dropbox/DevFiles/XCODE/PewPewPew/PewPewPew/MainScene.swift"
+                  timestampString = "521235705.4479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PewPewPew.MainScene.init () -&gt; PewPewPew.MainScene"
+                  moduleName = "PewPewPew"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Dropbox/DevFiles/XCODE/PewPewPew/PewPewPew/MainScene.swift"
+                  timestampString = "521235705.449388"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "121">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PewPewPew.MainScene.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;PewPewPew.MainScene&gt;"
+                  moduleName = "PewPewPew"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gabe/Dropbox/DevFiles/XCODE/PewPewPew/PewPewPew/MainScene.swift"
+                  timestampString = "521235705.450873"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

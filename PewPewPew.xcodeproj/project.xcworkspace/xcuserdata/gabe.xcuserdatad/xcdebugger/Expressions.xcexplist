@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Ball.setPhysics() -&gt; ():Ball.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.physicsBody">
+            </PersistentString>
+            <PersistentString
+               value = "self.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainScene.sceneDidLoad() -&gt; ():MainScene.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MainScene.update(Double) -&gt; ():MainScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.children">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainScene.touchesMoved(Set&lt;UITouch&gt;, with : UIEvent?) -&gt; ():MainScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
