@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import GameplayKit
 
 
 class MainScene : SKScene, SKPhysicsContactDelegate{
@@ -46,27 +47,32 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
     
     
     
-    // MARK: Interaction
+
     private var isRed : Bool = false
     func dropBall(){
         if let newball = self.ball?.copy() as! Ball?{
             newball.setColor(color: isRed ? UIColor.red : UIColor.blue)
+            newball.position = CGPoint(x: getRandomPosition(), y: newball.position.y)
             self.addChild(newball)
             isRed = !isRed
         }
     }
     
+    func getRandomPosition() -> CGFloat{
+        let x =  GKRandomDistribution.init(lowestValue: Int((self.size.width)/2) * -1, highestValue: Int((self.size.width)/2) - 10).nextInt()
+        return CGFloat(x)
+    }
     
+    
+    
+    // MARK: Interaction
     func touchDown(atPoint pos : CGPoint){
         let moveAction =  SKAction.moveTo(x: pos.x, duration: 0.02)
         paddle?.run(moveAction)
     }
-    
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches{self.touchDown(atPoint: t.location(in: self))}
     }
-    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches{self.touchDown(atPoint: t.location(in: self))}
     }
@@ -74,7 +80,6 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
     
     
     override func update(_ currentTime: TimeInterval) {
-        
         if(self.lastUpdate == 0){
             self.lastUpdate = currentTime
             
@@ -129,7 +134,7 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
             let shockwave = SKShapeNode(circleOfRadius: 1)
             shockwave.position = contact.contactPoint
             shockwave.fillColor = ball.color
-            shockwave.strokeColor = UIColor.yellow  
+            shockwave.strokeColor = UIColor.yellow
             self.addChild(shockwave)
             shockwave.run(shockWaveAction)
         }

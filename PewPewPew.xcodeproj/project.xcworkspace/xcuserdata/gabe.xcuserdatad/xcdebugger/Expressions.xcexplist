@@ -3,39 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Ball.setPhysics() -&gt; ():Ball.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.physicsBody">
-            </PersistentString>
-            <PersistentString
-               value = "self.size">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MainScene.sceneDidLoad() -&gt; ():MainScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.physicsWorld.contactDelegate">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MainScene.update(Double) -&gt; ():MainScene.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "child.position">
-            </PersistentString>
-            <PersistentString
-               value = "paddle.position">
-            </PersistentString>
-            <PersistentString
-               value = "self.children">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "MainScene.touchesMoved(Set&lt;UITouch&gt;, with : UIEvent?) -&gt; ():MainScene.swift">
          <PersistentStrings>
             <PersistentString
@@ -57,6 +24,58 @@
             </PersistentString>
             <PersistentString
                value = "contact.bodyB.node?.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Ball.setPhysics() -&gt; ():Ball.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.physicsBody">
+            </PersistentString>
+            <PersistentString
+               value = "self.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainScene.update(Double) -&gt; ():MainScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "child.position">
+            </PersistentString>
+            <PersistentString
+               value = "paddle.position">
+            </PersistentString>
+            <PersistentString
+               value = "self.children">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainScene.getRandomPosition() -&gt; CGFloat:MainScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainScene.dropBall() -&gt; ():MainScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "newball.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainScene.sceneDidLoad() -&gt; ():MainScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.physicsWorld.contactDelegate">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
