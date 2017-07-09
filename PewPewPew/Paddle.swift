@@ -26,11 +26,23 @@ class Paddle : SKSpriteNode{
         physicsBody?.contactTestBitMask = 0b0001
         physicsBody?.allowsRotation = false
         physicsBody?.friction = 1.0
-        name = "paddle"
+        name = "Paddle"
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
+    
+    func grow(byAmount amount: CGFloat){
+        self.size = CGSize(width: (self.size.width + amount), height: self.size.height)
+        self.setPaddlePhysics()
+    }
+    
+    func shrink(byAmount amount: CGFloat){
+        self.grow(byAmount: amount * -1)
     }
 }

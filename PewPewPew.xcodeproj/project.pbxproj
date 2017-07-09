@@ -88,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00BA8D551F12A24400055BF8 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				00BAB1AE1F116169005D80D1 /* Ball.swift */,
+				0000214E1F118D150033FF5D /* Paddle.swift */,
+			);
+			name = UIElements;
+			sourceTree = "<group>";
+		};
 		00BAB16A1F113FAE005D80D1 = {
 			isa = PBXGroup;
 			children = (
@@ -122,8 +131,7 @@
 				00BAB1881F113FAE005D80D1 /* Info.plist */,
 				00BAB1AA1F11466A005D80D1 /* MainScene.sks */,
 				00BAB1AC1F114687005D80D1 /* MainScene.swift */,
-				00BAB1AE1F116169005D80D1 /* Ball.swift */,
-				0000214E1F118D150033FF5D /* Paddle.swift */,
+				00BA8D551F12A24400055BF8 /* UIElements */,
 			);
 			path = PewPewPew;
 			sourceTree = "<group>";

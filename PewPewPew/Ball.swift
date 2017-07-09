@@ -13,10 +13,10 @@ class Ball : SKSpriteNode{
     
     init(){
         //create node
-        super.init(texture: SKTexture.init(), color: SKColor.blue, size: CGSize(width: 20.0, height: 20.0))
+        super.init(texture: nil, color: SKColor.blue, size: CGSize(width: 20.0, height: 20.0))
 
         //set properties
-        setProperties()
+        //setProperties()
         
         //set physics
         setPhysics()
@@ -34,13 +34,21 @@ class Ball : SKSpriteNode{
     }
     
     func setProperties(){
-        self.name = "ball"
+        self.name = "Ball"
+    }
+    
+    
+    func setColor(color : UIColor){
+        self.color = color
+        setProperties()
     }
     
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
 
 
