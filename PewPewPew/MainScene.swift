@@ -55,7 +55,8 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
 
     func dropBall(){
         if let newball = self.ball?.copy() as! Ball?{
-            newball.setColor(color: getRandomColor())
+//            newball.setColor(color: getRandomColor())
+            newball.setTexture(type: getRandomBall()   )
             newball.position = CGPoint(x: getRandomPosition(), y: newball.position.y)
             self.addChild(newball)
         }
@@ -72,28 +73,32 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
     var colorOrange = "";
     var colorBlack = "";
     var colorCyan = "";
-    func getRandomColor() -> UIColor{
+    func getRandomBall() -> Ball.BallType{
         print("\nred \(colorRed)\nblue\(colorBlue)\norange \(colorOrange)\ncyan \(colorCyan)\nblack \(colorBlack)")
-        let x = GKShuffledDistribution.init(lowestValue: 0, highestValue: 50)
+        let x = GKShuffledDistribution.init(lowestValue: 0, highestValue: 59)
         
         print(x.nextInt())
 
         switch x.nextInt() {
         case 0..<10:
             colorRed += "*"
-            return UIColor.red
+            return Ball.BallType.blueSpecial
         case 10..<20:
             colorBlue += "*"
-            return UIColor.blue
+            return Ball.BallType.blue
         case 20..<30:
             colorOrange += "*"
-            return UIColor.orange
+            return Ball.BallType.greenBall
         case 30..<40:
             colorCyan += "*"
-            return UIColor.cyan
+            return Ball.BallType.greenBall2
+        case 40..<50:
+            return Ball.BallType.red
+        case 50..<60:
+            return Ball.BallType.redUpsideDown
         default:
             colorBlack += "*"
-            return UIColor.black
+            return Ball.BallType.redUpsideDown
         }
     }
     
@@ -154,11 +159,20 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
         
             let ball = contact.bodyB.node as! Ball
             
-            if(ball.color == UIColor.red){
+            if(ball.type == Ball.BallType.redUpsideDown){
                 paddle?.shrink(byAmount: 15)
                 score -= 10
             }
-            else if(ball.color == UIColor.blue){
+            else if(ball.type == Ball.BallType.red){
+                paddle?.shrink(byAmount: 10)
+                score -= 5
+            }
+                
+            else if(ball.type == Ball.BallType.blueSpecial){
+                paddle?.grow(byAmount: 10)
+                score += 15
+            }
+            else if(ball.type == Ball.BallType.blue){
                 paddle?.grow(byAmount: 5)
                 score += 10
             }
