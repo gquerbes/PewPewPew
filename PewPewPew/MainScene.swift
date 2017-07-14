@@ -1,7 +1,7 @@
 //
 //  MainScene.swift
 //  PewPewPew
-//
+// Catch the Green to grow paddle, catch red to shrink paddle, miss blue and SOMETHING BADDDDD happens
 //  Created by Gabe on 7/8/17.
 //  Copyright © 2017 Fourteen66. All rights reserved.
 //
@@ -13,13 +13,18 @@ import GameplayKit
 
 class MainScene : SKScene, SKPhysicsContactDelegate{
     
+    //MARK: Assets
     private var ball : Ball?
     private var paddle : Paddle?
-    private var paddleXPosition : CGFloat?
-    private var paddleYPosition : CGFloat? // does not change
+    
+    //MARK: Game variables
     private var lastUpdate : TimeInterval = 0
+    
     private var score : Int32 = 0
     private var scoreLabel : SKLabelNode?
+    private var highScore : Int32?
+
+    private var level : Int = 1;
     
     
     override func sceneDidLoad() {
@@ -31,9 +36,9 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
             let w = (self.size.width + self.size.height) * 0.05
             self.paddle = Paddle.init(size: CGSize(width: w, height: w/4))
             
-            paddleXPosition = UIScreen.main.bounds.width * -0.05
-            paddleYPosition = UIScreen.main.bounds.height * -0.5
-            paddle?.position = CGPoint.init(x: paddleXPosition!, y: paddleYPosition!)
+            let paddleXPosition = UIScreen.main.bounds.width * -0.05
+            let paddleYPosition = UIScreen.main.bounds.height * -0.5
+            paddle?.position = CGPoint.init(x: paddleXPosition, y: paddleYPosition)
           
             self.addChild(paddle!)
         }
@@ -55,11 +60,15 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
 
     func dropBall(){
         if let newball = self.ball?.copy() as! Ball?{
+            newball.setPhysics(velocity: CGFloat(level))
 //            newball.setColor(color: getRandomColor())
             newball.setTexture(type: getRandomBall()   )
             newball.position = CGPoint(x: getRandomPosition(), y: newball.position.y)
             self.addChild(newball)
+            print(newball.physicsBody!.velocity.dy);
         }
+        
+        
     }
     
     func getRandomPosition() -> CGFloat{
@@ -82,6 +91,7 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
         switch x.nextInt() {
         case 0..<10:
             colorRed += "*"
+            level += 1
             return Ball.BallType.blueSpecial
         case 10..<20:
             colorBlue += "*"
@@ -158,26 +168,37 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
             contact.bodyB.node?.name == "Ball" {
         
             let ball = contact.bodyB.node as! Ball
-            
+            let shockwaveColor : UIColor
+            let shockwaveRadius : CGFloat
             if(ball.type == Ball.BallType.redUpsideDown){
                 paddle?.shrink(byAmount: 15)
                 score -= 10
+                shockwaveColor = UIColor.red
+                shockwaveRadius = 4
             }
             else if(ball.type == Ball.BallType.red){
                 paddle?.shrink(byAmount: 10)
                 score -= 5
+                shockwaveColor = UIColor.red
+                shockwaveRadius = 2
             }
                 
             else if(ball.type == Ball.BallType.blueSpecial){
                 paddle?.grow(byAmount: 10)
                 score += 15
+                shockwaveColor = UIColor.blue
+                shockwaveRadius = 1
             }
             else if(ball.type == Ball.BallType.blue){
                 paddle?.grow(byAmount: 5)
                 score += 10
+                shockwaveColor = UIColor.blue
+                shockwaveRadius = 1
             }
             else{
                 score += 5
+                shockwaveColor = UIColor.green
+                shockwaveRadius = 1
             }
             //update score
             updateScoreLabel()
@@ -186,10 +207,9 @@ class MainScene : SKScene, SKPhysicsContactDelegate{
             ball.removeFromParent()
             
             //play shockwave
-            let shockwave = SKShapeNode(circleOfRadius: 1)
+            let shockwave = SKShapeNode(circleOfRadius: shockwaveRadius)
             shockwave.position = contact.contactPoint
-            shockwave.fillColor = ball.color
-            shockwave.strokeColor = UIColor.yellow
+            shockwave.strokeColor = shockwaveColor
             self.addChild(shockwave)
             shockwave.run(shockWaveAction)
         }

@@ -58,9 +58,10 @@ class Ball : SKSpriteNode{
         return SKTexture.init(image: textureImage!)
     }
     
-    func setPhysics(){
+    func setPhysics(velocity: CGFloat = 1.0){
         self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
         self.physicsBody?.affectedByGravity = true
+        self.physicsBody?.velocity = CGVector(dx: self.physicsBody!.velocity.dx + 50, dy: (self.physicsBody!.velocity.dy + velocity) * velocity * 20)
         self.physicsBody?.categoryBitMask = 0b0001
         
         
